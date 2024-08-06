@@ -26,15 +26,15 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script type="text/babel">
-        function Titulo() {
+        function Titulo({ children }) {
             return (
-                <h1 className='form__titulo'>Login</h1>
+                <h1 className='form__titulo'>{children}</h1>
             )
         }
 
-        function Subtitulo() {
+        function Subtitulo({ children }) {
             return (
-                <h2 className='form__texto'> Boas-vidas! Faça seu login.</h2>
+                <h2 className='form__texto'>{children}</h2>
             )
         }
 
@@ -51,10 +51,10 @@
             )
         }
 
-        function Botao() {
+        function Botao({ children }) {
             return (
                 <button type="submit"
-                    className="form__botao">Login</button>
+                    className="form__botao">{children}</button>
             )
         }
 
@@ -65,8 +65,8 @@
                         alt='Mulher preta de cabelos crespos usando óculos e mexendo no computador, também há o logo da CodeConnect' />
                     <section>
                         <form>
-                            <Titulo />
-                            <Subtitulo />
+                            <Titulo>Login</Titulo>
+                            <Subtitulo>Boas-vidas! Faça seu login.</Subtitulo>
                             <CampoDeDigitacao
                                 label="E-mail ou usuário"
                                 tipo="email"
@@ -77,8 +77,7 @@
                                 tipo="password"
                                 placeholder="Digite a sua senha"
                             />
-                            
-                            <Botao />
+                            <Botao>Login</Botao>
                         </form>
                     </section>
                 </div>
