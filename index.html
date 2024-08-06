@@ -14,7 +14,75 @@
 </head>
 
 <body>
+    <div id="root"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"
+        integrity="sha512-QVs8Lo43F9lSuBykadDb0oSXDL/BbZ588urWVCRwSIoewQv/Ewg1f84mK3U790bZ0FfhFa1YSQUmIhG+pIRKeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"
+        integrity="sha512-6a1107rTlA4gYpgHAqbwLAtxmWipBdJFcq8y5S/aTge3Bp+VAklABm2LO+Kg51vOWR9JMZq1Ovjl5tpluNpTeQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.25.3/babel.min.js"
+        integrity="sha512-AMxsIArmaYhs6Z2/HaLnhE+Dgz6OCEpjg65sD17Xvaauk2mb2ROqSAJXojhV5d+0Ipu3KlSt+9DF/O/i8Rb2rA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script type="text/babel">
+        function Titulo() {
+            return (
+                <h1 className='form__titulo'>Login</h1>
+            )
+        }
+
+        function Subtitulo() {
+            return (
+                <h2 className='form__texto'> Boas-vidas! Faça seu login.</h2>
+            )
+        }
+
+        function CampoDeDigitacao() {
+            return (
+                <div className='form__campo-digitacao'>
+                    <label for="email">E-mail ou usuário</label>
+                    <input type="email"
+                        placeholder="Digite o seu e-mail ou usuário"
+                        required
+                        id="email" />
+                </div>
+            )
+        }
+
+        function Botao(params) {
+            return (
+                <button type="submit">Login</button>
+            )
+        }
+
+        function PaginaDeLogin() {
+            return (
+                <div className='container-login'>
+                    <img src='./img/imagem-login.png'
+                        alt='Mulher preta de cabelos crespos usando óculos e mexendo no computador, também há o logo da CodeConnect' />
+                    <section>
+                        <form>
+                            <Titulo />
+                            <Subtitulo />
+                            <CampoDeDigitacao />
+                            <div className="form__campo-digitacao">
+                                <label for="senha">Senha</label>
+                                <input type="password"
+                                    placeholder="Digite sua senha"
+                                    required
+                                    id="senha" />
+                            </div>
+                            <Botao />
+                        </form>
+                    </section>
+                </div>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<PaginaDeLogin />)
+
+    </script>
 </body>
 
 </html>
