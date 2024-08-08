@@ -178,8 +178,13 @@
 
 /* Estilos do link */
 .container-links__link {
+    text-decoration-line: none;
     color: var(--verde-destaque);
     font-size: 18px;
+}
+
+.container-links__link:hover {
+    text-decoration-line: underline;
 }
 
 .container-links__link::after {
